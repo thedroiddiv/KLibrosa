@@ -1,6 +1,5 @@
 package com.thedroiddiv.klibrosa.wavFile
 
-import com.thedroiddiv.klibrosa.wavFile.WavFileException
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
