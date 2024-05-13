@@ -1,6 +1,6 @@
 val libGroupId = "com.thedroiddiv.klibrosa"
 val libArtifactId = "Klibrosa"
-val libArtifactVersion = "1.0"
+val libArtifactVersion = "1.1"
 
 plugins {
     kotlin("jvm") version "1.9.23"
