@@ -9,6 +9,7 @@ import java.io.File
 import java.io.IOException
 import java.math.RoundingMode
 import java.text.DecimalFormat
+import java.text.DecimalFormatSymbols
 import java.util.*
 import java.util.stream.DoubleStream
 import java.util.stream.IntStream
@@ -534,7 +535,7 @@ class KLibrosa {
     ): FloatArray {
         val magValueArray = readMagnitudeValuesFromFile(path, sampleRate, readDurationInSeconds, offsetDuration)
 
-        val df = DecimalFormat("#.#####")
+        val df = DecimalFormat("#.#####", DecimalFormatSymbols(Locale.US))
         df.roundingMode = RoundingMode.CEILING
 
         val mNumFrames = this.noOfFrames
