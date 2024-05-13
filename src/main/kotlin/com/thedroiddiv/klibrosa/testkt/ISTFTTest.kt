@@ -22,9 +22,9 @@ object ISTFTTest {
     }
 
     @Throws(NumberFormatException::class, IOException::class)
-    fun readFromFile(): Array<Array<Complex?>> {
+    fun readFromFile(): Array<Array<Complex>> {
         val savedGameFile = "/Users/vishrud/Downloads/twodarray.txt"
-        val board = Array(2049) { arrayOfNulls<Complex>(212) }
+        val board = Array(2049) { Array(212) { Complex(0.0) } }
         val reader = BufferedReader(FileReader(savedGameFile))
         var line = ""
         var row = 0

@@ -141,7 +141,7 @@ object SpleeterTest_1 {
     }
 
 
-    fun transposeMatrix(matrix: Array<Array<Complex?>>): Array<Array<Complex?>> {
+    fun transposeMatrix(matrix: Array<Array<Complex>>): Array<Array<Complex?>> {
         val m = matrix.size
         val n = matrix[0].size
 

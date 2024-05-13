@@ -23,9 +23,9 @@ object ISTFTTest2 {
     }
 
     @Throws(NumberFormatException::class, IOException::class)
-    fun readFromFile(): Array<Array<Complex?>> {
+    fun readFromFile(): Array<Array<Complex>> {
         val savedGameFile = "/Users/vishrud/Desktop/Vasanth/Technology/Mobile-ML/Spleeter_TF2.0/local/output2darray.csv"
-        val board = Array(129) { arrayOfNulls<Complex>(6881) }
+        val board = Array(129) { Array(6881) { Complex(0.0) } }
         val reader = BufferedReader(FileReader(savedGameFile))
         var line = ""
         var row = 0

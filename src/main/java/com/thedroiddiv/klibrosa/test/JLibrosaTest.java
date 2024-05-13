@@ -36,14 +36,14 @@ public class JLibrosaTest {
 
 
         /* To read the no of frames present in audio file*/
-        int nNoOfFrames = jLibrosa.getNoOfFrames();
+        int nNoOfFrames = jLibrosa.noOfFrames;
 
 
         /* To read sample rate of audio file */
         int sampleRate = jLibrosa.getSampleRate();
 
         /* To read number of channels in audio file */
-        int noOfChannels = jLibrosa.getNoOfChannels();
+        int noOfChannels = jLibrosa.noOfChannels;
 
         Complex[][] stftComplexValues = jLibrosa.generateSTFTFeatures(audioFeatureValues, sampleRate, 40);
 
