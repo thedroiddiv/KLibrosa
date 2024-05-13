@@ -19,7 +19,7 @@ import java.util.stream.IntStream
  *
  * @author abhi-rawat1
  */
-class JLibrosa {
+class KLibrosa {
     private val BUFFER_SIZE = 4096
     @JvmField
 	var noOfFrames: Int = -1

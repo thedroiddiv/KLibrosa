@@ -13,7 +13,7 @@ object JLibrosaMatteoTest {
     fun main(args: Array<String>) {
         // TODO Auto-generated method stub
 
-        val jLibrosa = JLibrosa()
+        val kLibrosa = KLibrosa()
 
         val jsonParser = JSONParser()
         try {
@@ -33,7 +33,7 @@ object JLibrosaMatteoTest {
                 }
 
 
-                val melSpectrogram = jLibrosa.generateMelSpectroGram(sigFltArr, 22050, 1024, 128, 128)
+                val melSpectrogram = kLibrosa.generateMelSpectroGram(sigFltArr, 22050, 1024, 128, 128)
                 println(1000)
             }
         } catch (e: FileNotFoundException) {

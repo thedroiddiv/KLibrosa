@@ -13,7 +13,7 @@ import java.util.stream.IntStream
  * @author abhi-rawat1
  */
 object SpleeterTest {
-    var jLibrosa: JLibrosa? = null
+    var kLibrosa: KLibrosa? = null
 
     @Throws(IOException::class, WavFileException::class, FileFormatNotSupportedException::class)
     @JvmStatic
@@ -22,10 +22,10 @@ object SpleeterTest {
         val defaultSampleRate = -1 //-1 value implies the method to use default sample rate
         val defaultAudioDuration = 20 //-1 value implies the method to process complete audio duration
 
-        jLibrosa = JLibrosa()
+        kLibrosa = KLibrosa()
 
         /* To read the magnitude values of audio files - equivalent to librosa.load('../audioFiles/1995-1826-0003.wav', sr=None) function */
-        val stereoFeatureValues = jLibrosa!!.loadAndReadStereo(audioFilePath, defaultSampleRate, defaultAudioDuration)
+        val stereoFeatureValues = kLibrosa!!.loadAndReadStereo(audioFilePath, defaultSampleRate, defaultAudioDuration)
 
         val stereoTransposeFeatValues = transposeMatrix(stereoFeatureValues)
 
@@ -45,7 +45,7 @@ object SpleeterTest {
         for (i in stereoMatrix[0].indices) {
             val doubleStream = getColumnFromMatrix(stereoMatrix, i)
 
-            val stftComplexValues = jLibrosa!!.generateSTFTFeatures(doubleStream, sampleRate, 40, 4096, 128, 1024)
+            val stftComplexValues = kLibrosa!!.generateSTFTFeatures(doubleStream, sampleRate, 40, 4096, 128, 1024)
             val transposedSTFTComplexValues = transposeMatrix(stftComplexValues)
             stftValuesList.add(transposedSTFTComplexValues)
         }

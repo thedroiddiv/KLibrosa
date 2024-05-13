@@ -17,12 +17,12 @@ object JLibrosaTest {
         val defaultSampleRate = -1 //-1 value implies the method to use default sample rate
         val defaultAudioDuration = -1 //-1 value implies the method to process complete audio duration
 
-        val jLibrosa = JLibrosa()
+        val kLibrosa = KLibrosa()
 
         /* To read the magnitude values of audio files - equivalent to librosa.load('../audioFiles/1995-1826-0003.wav', sr=None) function */
-        val audioFeatureValues = jLibrosa.loadAndRead(audioFilePath, defaultSampleRate, defaultAudioDuration)
+        val audioFeatureValues = kLibrosa.loadAndRead(audioFilePath, defaultSampleRate, defaultAudioDuration)
 
-        val audioFeatureValuesList = jLibrosa.loadAndReadAsList(audioFilePath, defaultSampleRate, defaultAudioDuration)
+        val audioFeatureValuesList = kLibrosa.loadAndReadAsList(audioFilePath, defaultSampleRate, defaultAudioDuration)
 
 
         for (i in 0..9) {
@@ -31,22 +31,22 @@ object JLibrosaTest {
 
 
         /* To read the no of frames present in audio file*/
-        val nNoOfFrames = jLibrosa.noOfFrames
+        val nNoOfFrames = kLibrosa.noOfFrames
 
 
         /* To read sample rate of audio file */
-        val sampleRate = jLibrosa.sampleRate
+        val sampleRate = kLibrosa.sampleRate
 
         /* To read number of channels in audio file */
-        val noOfChannels = jLibrosa.noOfChannels
+        val noOfChannels = kLibrosa.noOfChannels
 
-        val stftComplexValues = jLibrosa.generateSTFTFeatures(audioFeatureValues, sampleRate, 40)
-
-
-        val invSTFTValues = jLibrosa.generateInvSTFTFeatures(stftComplexValues, sampleRate, 40)
+        val stftComplexValues = kLibrosa.generateSTFTFeatures(audioFeatureValues, sampleRate, 40)
 
 
-        val melSpectrogram = jLibrosa.generateMelSpectroGram(audioFeatureValues, sampleRate, 2048, 128, 256)
+        val invSTFTValues = kLibrosa.generateInvSTFTFeatures(stftComplexValues, sampleRate, 40)
+
+
+        val melSpectrogram = kLibrosa.generateMelSpectroGram(audioFeatureValues, sampleRate, 2048, 128, 256)
 
         println("/n/n")
         println("***************************************")
@@ -58,9 +58,9 @@ object JLibrosaTest {
         /* To read the MFCC values of an audio file
          *equivalent to librosa.feature.mfcc(x, sr, n_mfcc=40) in python
          * */
-        val mfccValues = jLibrosa.generateMFCCFeatures(audioFeatureValues, sampleRate, 40)
+        val mfccValues = kLibrosa.generateMFCCFeatures(audioFeatureValues, sampleRate, 40)
 
-        val meanMFCCValues = jLibrosa.generateMeanMFCCFeatures(mfccValues, mfccValues.size, mfccValues[0].size)
+        val meanMFCCValues = kLibrosa.generateMeanMFCCFeatures(mfccValues, mfccValues.size, mfccValues[0].size)
 
         println(".......")
         println("Size of MFCC Feature Values: (" + mfccValues.size + " , " + mfccValues[0].size + " )")
@@ -76,10 +76,10 @@ object JLibrosaTest {
          *equivalent to librosa.core.stft(x, sr, n_mfcc=40) in python
          *Note STFT values return would be complex in nature with real and imaginary values.
          * */
-        val stftComplexValues1 = jLibrosa.generateSTFTFeatures(audioFeatureValues, sampleRate, 40)
+        val stftComplexValues1 = kLibrosa.generateSTFTFeatures(audioFeatureValues, sampleRate, 40)
 
 
-        val invSTFTValues1 = jLibrosa.generateInvSTFTFeatures(stftComplexValues, sampleRate, 40)
+        val invSTFTValues1 = kLibrosa.generateInvSTFTFeatures(stftComplexValues, sampleRate, 40)
 
         println(".......")
         println("Size of STFT Feature Values: (" + stftComplexValues.size + " , " + stftComplexValues[0].size + " )")

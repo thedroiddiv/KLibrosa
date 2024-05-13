@@ -12,9 +12,9 @@ object ISTFTTest {
         // TODO Auto-generated method stub
 
         val compArray = readFromFile()
-        val jLibrosa = JLibrosa()
+        val kLibrosa = KLibrosa()
 
-        val magValues = jLibrosa.generateInvSTFTFeatures(
+        val magValues = kLibrosa.generateInvSTFTFeatures(
             compArray,
             44100, 40, 4096, 128, 1024
         )

@@ -210,10 +210,10 @@ class FFT_iFFT {
                 val defaultSampleRate = -1 //-1 value implies the method to use default sample rate
                 val defaultAudioDuration = -1 //-1 value implies the method to process complete audio duration
 
-                val jLibrosa = JLibrosa()
+                val kLibrosa = KLibrosa()
 
                 /* To read the magnitude values of audio files - equivalent to librosa.load('../audioFiles/1995-1826-0003.wav', sr=None) function */
-                val audioFeatureValues = jLibrosa.loadAndRead(audioFilePath, defaultSampleRate, defaultAudioDuration)
+                val audioFeatureValues = kLibrosa.loadAndRead(audioFilePath, defaultSampleRate, defaultAudioDuration)
 
 
                 //Complex[][] stftComplexValues = jLibrosa.generateSTFTFeatures(audioFeatureValues, sampleRate, 40);
