@@ -1,6 +1,5 @@
-package com.thedroiddiv.klibrosa.testkt
+package com.thedroiddiv.klibrosa
 
-import com.thedroiddiv.klibrosa.JLibrosa
 import com.thedroiddiv.klibrosa.exception.FileFormatNotSupportedException
 import com.thedroiddiv.klibrosa.wavFile.WavFileException
 import java.io.IOException

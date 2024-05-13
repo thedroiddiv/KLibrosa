@@ -1,6 +1,5 @@
-package com.thedroiddiv.klibrosa.testkt
+package com.thedroiddiv.klibrosa
 
-import com.thedroiddiv.klibrosa.JLibrosa
 import com.thedroiddiv.klibrosa.exception.FileFormatNotSupportedException
 import com.thedroiddiv.klibrosa.wavFile.WavFileException
 import org.apache.commons.math3.complex.Complex
@@ -13,7 +12,7 @@ import java.util.stream.IntStream
  *
  * @author abhi-rawat1
  */
-object SpleeterTest_1 {
+object SpleeterTest {
     var jLibrosa: JLibrosa? = null
 
     @Throws(IOException::class, WavFileException::class, FileFormatNotSupportedException::class)

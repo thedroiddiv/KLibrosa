@@ -1,12 +1,11 @@
-package com.thedroiddiv.klibrosa.testkt
+package com.thedroiddiv.klibrosa
 
-import com.thedroiddiv.klibrosa.JLibrosa
 import org.apache.commons.math3.complex.Complex
 import java.io.BufferedReader
 import java.io.FileReader
 import java.io.IOException
 
-object ISTFTTest2 {
+object ISTFTTest {
     @Throws(NumberFormatException::class, IOException::class)
     @JvmStatic
     fun main(args: Array<String>) {
@@ -17,35 +16,31 @@ object ISTFTTest2 {
 
         val magValues = jLibrosa.generateInvSTFTFeatures(
             compArray,
-            44100, 40, 256, 128, 64
+            44100, 40, 4096, 128, 1024
         )
-        println("test")
     }
 
     @Throws(NumberFormatException::class, IOException::class)
     fun readFromFile(): Array<Array<Complex>> {
-        val savedGameFile = "/Users/vishrud/Desktop/Vasanth/Technology/Mobile-ML/Spleeter_TF2.0/local/output2darray.csv"
-        val board = Array(129) { Array(6881) { Complex(0.0) } }
+        val savedGameFile = "/Users/vishrud/Downloads/twodarray.txt"
+        val board = Array(2049) { Array(212) { Complex(0.0) } }
         val reader = BufferedReader(FileReader(savedGameFile))
         var line = ""
         var row = 0
         while ((reader.readLine().also { line = it }) != null) {
             val cols = line.split(",".toRegex()).dropLastWhile { it.isEmpty() }
                 .toTypedArray() //note that if you have used space as separator you have to split on " "
+            val col = 0
+            val counter = 0
             var i = 0
             while (i < cols.size) {
-                var procStr = cols[i].replace("[(]".toRegex(), "")
-                procStr = procStr.replace("[)]".toRegex(), "")
-                var splStr: Array<String>? = null
-
-                splStr = procStr.split("xx".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-                val realStr = splStr[0]
-                val imgStr = splStr[1]
+                val realStr = cols[i].replace("[(]".toRegex(), "")
+                val imagStr = cols[i + 1].replace("[)]".toRegex(), "")
 
                 val real = realStr.toDouble()
-                val imag = imgStr.toDouble()
-                board[row][i] = Complex(real, imag)
-                i = i + 1
+                val imag = imagStr.toDouble()
+                board[row][counter] = Complex(real, imag)
+                i = i + 2
             }
 
 

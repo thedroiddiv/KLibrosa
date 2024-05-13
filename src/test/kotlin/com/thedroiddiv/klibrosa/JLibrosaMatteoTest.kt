@@ -1,6 +1,5 @@
-package com.thedroiddiv.klibrosa.testkt
+package com.thedroiddiv.klibrosa
 
-import com.thedroiddiv.klibrosa.JLibrosa
 import org.json.simple.JSONArray
 import org.json.simple.JSONObject
 import org.json.simple.parser.JSONParser
