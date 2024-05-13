@@ -167,7 +167,7 @@ class JLibrosa {
      * @return
      */
     fun generateMFCCFeatures(
-        magValues: FloatArray?,
+        magValues: FloatArray,
         mSampleRate: Int,
         nMFCC: Int,
         n_fft: Int,
@@ -214,7 +214,7 @@ class JLibrosa {
      * @param nMFCC
      * @return
      */
-    fun generateMFCCFeatures(magValues: FloatArray?, mSampleRate: Int, nMFCC: Int): Array<FloatArray> {
+    fun generateMFCCFeatures(magValues: FloatArray, mSampleRate: Int, nMFCC: Int): Array<FloatArray> {
         val mfccValues =
             this.generateMFCCFeatures(magValues, mSampleRate, nMFCC, this.n_fft, this.n_mels, this.hop_length)
 
@@ -265,7 +265,7 @@ class JLibrosa {
      * @param yValues - audio magnitude values
      * @return
      */
-    fun generateMelSpectroGram(yValues: FloatArray?): Array<DoubleArray> {
+    fun generateMelSpectroGram(yValues: FloatArray): Array<DoubleArray> {
         val mfccConvert = AudioFeatureExtraction()
         val melSpectrogram = mfccConvert.melSpectrogram(yValues)
         return melSpectrogram
@@ -285,7 +285,7 @@ class JLibrosa {
      * @return
      */
     fun generateMelSpectroGram(
-        yValues: FloatArray?,
+        yValues: FloatArray,
         mSampleRate: Int,
         n_fft: Int,
         n_mels: Int,
@@ -310,7 +310,7 @@ class JLibrosa {
      * @return
      */
     fun generateSTFTFeatures(
-        magValues: FloatArray?,
+        magValues: FloatArray,
         mSampleRate: Int,
         nMFCC: Int,
         n_fft: Int,
@@ -332,7 +332,7 @@ class JLibrosa {
      * @return
      */
     fun generateSTFTFeaturesWithPadOption(
-        magValues: FloatArray?,
+        magValues: FloatArray,
         mSampleRate: Int,
         nMFCC: Int,
         n_fft: Int,
@@ -477,7 +477,7 @@ class JLibrosa {
      * @param nMFCC
      * @return
      */
-    fun generateSTFTFeatures(magValues: FloatArray?, mSampleRate: Int, nMFCC: Int): Array<Array<Complex>> {
+    fun generateSTFTFeatures(magValues: FloatArray, mSampleRate: Int, nMFCC: Int): Array<Array<Complex>> {
         val stftValues =
             this.generateSTFTFeatures(magValues, mSampleRate, nMFCC, this.n_fft, this.n_mels, this.hop_length)
         return stftValues
@@ -493,7 +493,7 @@ class JLibrosa {
      * @return
      */
     fun generateSTFTFeaturesWithPadOption(
-        magValues: FloatArray?,
+        magValues: FloatArray,
         mSampleRate: Int,
         nMFCC: Int,
         padFlag: Boolean
